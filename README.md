@@ -17,7 +17,6 @@ Includes:
 - NOW
 - Passport
 - PostCSS / SASS
-- Pug
 - Slugs
 - UUID
 - Webpack
