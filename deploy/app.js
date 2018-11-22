@@ -1,13 +1,11 @@
 const express = require('express');
+const hbs = require('hbs');
 const path = require('path');
 const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
-const passport = require('passport');
 const promisify = require('es6-promisify');
-const flash = require('connect-flash');
 const expressValidator = require('express-validator');
 const routes = require('./routes/index');
-const helpers = require('./helpers');
 const errorHandlers = require('./handlers/errorHandlers');
 require('./handlers/passportHandlers');
 
@@ -16,7 +14,7 @@ const app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views')); 
-app.set('view engine', 'pug');
+app.set('view engine', 'hbs');
 
 // serves up static files from the public folder. Anything in public/ will just be served up as the file it is
 app.use(express.static(path.join(__dirname, 'public')));
